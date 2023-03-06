@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <title>GrabbR</title>
     <script src="script.js"></script>
+    <script src="grabbing-hand.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="grabbing-hand" class="row" style="background-color: lightgreen">
-    Hier komt de hand
+<div id="grabbing-hand" class="row" style="background-color: lightgreen; height: 400px">
+<div class="row">
+    <button id="grab-button" onclick="pickup()">Grab</button>
+</div>
 </div>
 <div id="package-assets" class="row" style="background-color: lightblue">
     Hier komt de pakketinhoud
