@@ -13,18 +13,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="row" style="background-color: lightgreen; height: 40vh">
-    <div class="column">
-        <button id="grab-button" onclick="pickup()">Grab</button>
+<div class="container-fluid" style="background-color: lightgreen; height: 40vh">
+    <div class="row justify-content-center">
+        <button id="grab-button" onclick="pickup()" style="padding: 5px">Grab</button>
     </div>
     <div id="grabbing-hand" class="row" style="width: 100%; height: 80%">
     </div>
-    <div id="package-assets" class="row" style="background-color: lightblue; height: 20%">
+    <div id="package-assets" class="row" style="background-color: lightblue;">
         <div id="bots">
 
         </div>
     </div>
-</div>
 
 <div id="conveyer-belt" class="row" style="background-color: lightgray">
     <div style="display: flex; flex-direction: row" id="boxes">
@@ -34,5 +33,7 @@
 <div id="score" class="row" style="background-color: lightyellow">
 
 </div>
+</div>
+
 </body>
 </html>

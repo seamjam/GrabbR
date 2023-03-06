@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32304f34-4dae-4d97-9777-d7b806ebc625" name="Changes" comment="add correctly increasing and decreasing of arm length">
+    <list default="true" id="32304f34-4dae-4d97-9777-d7b806ebc625" name="Changes" comment="add bootstrap and merge assets and grabbing hand">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grabbing-hand.js" beforeDir="false" afterPath="$PROJECT_DIR$/grabbing-hand.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
@@ -65,7 +66,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678095819252</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add bootstrap and merge assets and grabbing hand">
+      <created>1678096955314</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678096955314</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -85,6 +93,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix most merge conflicts" />
     <MESSAGE value="add correctly increasing and decreasing of arm length" />
-    <option name="LAST_COMMIT_MESSAGE" value="add correctly increasing and decreasing of arm length" />
+    <MESSAGE value="add bootstrap and merge assets and grabbing hand" />
+    <option name="LAST_COMMIT_MESSAGE" value="add bootstrap and merge assets and grabbing hand" />
   </component>
 </project>

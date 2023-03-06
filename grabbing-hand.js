@@ -7,7 +7,9 @@ document.getElementById("grabbing-hand").appendChild(canvas);
 
 // Get the canvas context
 const ctx = canvas.getContext('2d');
-const maxArmLength = canvas.height - 50;
+// change z index of canvas
+canvas.style.zIndex = 10;
+const maxArmLength = canvas.height * 3 - 50;
 
 // Set up the arm properties
 const baseArmLength = 100;

@@ -1,13 +1,13 @@
 .bot {
-    position: absolute;
+    position: relative;
     width: 15vmin;
-    height: 15vmin;
+    height: 80%;
     pointer-events: none;
 }
 
 .box {
     width: 15vmin;
-    height: 15vmin;
+    height: 80%;
 }
 
 #bots {
