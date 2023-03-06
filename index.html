@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>GrabbR</title>
     <script src="script.js"></script>
-    <script src="grabbing-hand.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,13 +11,18 @@
 <div class="row">
     <button id="grab-button" onclick="pickup()">Grab</button>
 </div>
-</div>
-<div id="package-assets" class="row" style="background-color: lightblue">
-    Hier komt de pakketinhoud
-</div>
-<div id="conveyer-belt" class="row" style="background-color: lightgray">
-    Hier komt de conveyer belt
-</div>
+    <div id="package-assets" class="row" style="background-color: lightblue">
+        <div id="bots">
 
+        </div>
+    </div>
+    <div id="conveyer-belt" class="row" style="background-color: lightgray">
+        <div style="display: flex; flex-direction: row" id="boxes">
+
+        </div>
+    </div>
+    <div id="score" class="row" style="background-color: lightyellow">
+
+    </div>
 </body>
 </html>

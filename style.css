@@ -7,3 +7,27 @@
     display: flex;
     flex-direction: column;
 }
+
+.bot {
+    position: absolute;
+    width: 15vmin;
+    height: 15vmin;
+    pointer-events: none;
+}
+
+.box {
+    width: 15vmin;
+    height: 15vmin;
+}
+
+#bots {
+    margin-top: 5vh;
+}
+
+#package-assets {
+    min-height: 25vh;
+}
+
+body {
+    margin: 0;
+}
