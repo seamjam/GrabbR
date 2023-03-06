@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>GrabbR</title>
-    <script defer src="script.js"></script>
+    <script src="script.js" defer></script>
+    <script src="grabbing-hand.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="grabbing-hand" class="row" style="background-color: lightgreen">
-        Hier komt de hand
+<div id="grabbing-hand" class="row" style="background-color: lightgreen; height: 400px">
+    <div class="row">
+        <button id="grab-button" onclick="pickup()">Grab</button>
     </div>
-    <div id="package-assets" class="row" style="background-color: lightblue">
-        <div id="bots">
-
-        </div>
-    </div>
-    <div id="conveyer-belt" class="row" style="background-color: lightgray">
-        <div style="display: flex; flex-direction: row" id="boxes">
-
-        </div>
-    </div>
-    <div id="score" class="row" style="background-color: lightyellow">
+</div>
+<div id="package-assets" class="row" style="background-color: lightblue">
+    <div id="bots">
 
     </div>
+</div>
+<div id="conveyer-belt" class="row" style="background-color: lightgray">
+    <div style="display: flex; flex-direction: row" id="boxes">
+
+    </div>
+</div>
+<div id="score" class="row" style="background-color: lightyellow">
+
+</div>
 </body>
 </html>
