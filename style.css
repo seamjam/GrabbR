@@ -1,23 +1,13 @@
-.row {
-    display: flex;
-    flex-direction: row;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
 .bot {
-    position: absolute;
+    position: relative;
     width: 15vmin;
-    height: 15vmin;
+    height: 80%;
     pointer-events: none;
 }
 
 .box {
     width: 15vmin;
-    height: 15vmin;
+    height: 80%;
 }
 
 #bots {
@@ -32,12 +22,8 @@ body {
     margin: 0;
 }
 
-.hand {
-    width: 60px; /* adjust to desired width */
-    height: 75px; /* adjust to desired height */
-    border-top-left-radius: 100px; /* set border radius to half of width */
-    border-bottom-left-radius: 100px; /* set border radius to half of width */
-    border-top: 10px solid black; /* add a thick black border to the curved side */
-    border-left: 20px solid black;
-    border-bottom: 10px solid black;
+#boxes {
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 5vmin;
 }
