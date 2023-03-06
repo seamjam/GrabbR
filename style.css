@@ -1,13 +1,3 @@
-.row {
-    display: flex;
-    flex-direction: row;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
 .bot {
     position: absolute;
     width: 15vmin;
