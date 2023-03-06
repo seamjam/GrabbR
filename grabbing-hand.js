@@ -2,6 +2,7 @@
 
     let handCanvas = document.createElement('canvas');
 handCanvas.classList.add("row");
+handCanvas.id = "grabbing-hand-canvas";
 handCanvas.width = document.getElementById("grabbing-hand").offsetWidth;
 handCanvas.height = document.getElementById("grabbing-hand").offsetHeight;
     document.getElementById("grabbing-hand").appendChild(handCanvas);
@@ -9,14 +10,14 @@ handCanvas.height = document.getElementById("grabbing-hand").offsetHeight;
     // Get the canvas context
     const ctx = handCanvas.getContext('2d');
     // change z index of canvas
-handCanvas.style.zIndex = 10;
+    handCanvas.style.zIndex = 10;
     const maxArmLength = handCanvas.height * 3 - 50;
 
     // Set up the arm properties
     const baseArmLength = 100;
     let armLength = baseArmLength;
     const armThickness = 20;
-    const anchorX = handCanvas.width / 2;
+    const anchorX = handCanvas.offsetWidth / 2;
     const anchorY = handCanvas.height / 8;
 
     // Set up the animation loop
@@ -60,8 +61,19 @@ handCanvas.style.zIndex = 10;
                 endpointY >= rect.top && endpointY <= rect.bottom) {
                 console.log("Grabbed element", element);
                 grabbedElement = element;
+                // Remove the element from the DOM
+                // element.parentNode.removeChild(grabbedElement);
+                // document.getElementById("grabbing-hand-canvas").appendChild(grabbedElement);
                 break;
             }
+        }
+
+        // Move the grabbed element along with the arm
+        if (grabbedElement) {
+            // document.getElementById("grabbing-hand-canvas").appendChild(grabbedElement);
+            grabbedElement.style.position = "absolute";
+            grabbedElement.style.left = endpointX + "px";
+            grabbedElement.style.top = endpointY + "px";
         }
 
         // Request the next animation frame
