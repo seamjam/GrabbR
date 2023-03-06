@@ -14,6 +14,13 @@ const armThickness = 20;
 const anchorX = canvas.width / 2;
 const anchorY = canvas.height / 8;
 
+//set up the hand properties
+const Handwidth = 100; // adjust to desired width
+const Handheight = 50; // adjust to desired height
+const borderWidth = 10; // adjust to desired border width
+
+
+
 // Set up the animation loop
 let armSpeed = 0.01;
 let minArmAngle = 0;
@@ -36,6 +43,14 @@ function animate() {
     ctx.lineWidth = armThickness;
     ctx.moveTo(anchorX, anchorY);
     ctx.lineTo(endpointX, endpointY);
+    ctx.stroke();
+
+    //Draw the hand
+    ctx.beginPath();
+    let angleOffset = armAngle - 45;
+    ctx.arc(endpointX, endpointY, 50, 0 + angleOffset, Math.PI + angleOffset, true); // draw the top half of a circle
+    ctx.lineWidth = borderWidth;
+    ctx.strokeStyle = "black";
     ctx.stroke();
 
     // Update the arm angle for the next frame

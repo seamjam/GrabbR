@@ -31,3 +31,13 @@
 body {
     margin: 0;
 }
+
+.hand {
+    width: 60px; /* adjust to desired width */
+    height: 75px; /* adjust to desired height */
+    border-top-left-radius: 100px; /* set border radius to half of width */
+    border-bottom-left-radius: 100px; /* set border radius to half of width */
+    border-top: 10px solid black; /* add a thick black border to the curved side */
+    border-left: 20px solid black;
+    border-bottom: 10px solid black;
+}
