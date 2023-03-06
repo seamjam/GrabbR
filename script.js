@@ -7,6 +7,16 @@ const colors = {
     yellow: ["00acc1", "1e88e5", "ffd600"],
 }
 
+function getOffsets() {
+    let offset = Math.round(Math.random() * 7, 1);
+    if (botOffsets.includes(offset)) {
+        return getOffset();
+    } else {
+        botOffsets.push(offset);
+        return offset;
+    }
+}
+
 function createBotUrl(colors, seed) {
     return `https://api.dicebear.com/5.x/bottts/svg?baseColor=${colors[0]},${colors[1]},${colors[2]}&seed=${seed}`
 }

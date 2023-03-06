@@ -9,7 +9,7 @@
 }
 
 .bot {
-    position: relative;
+    position: absolute;
     width: 15vmin;
     height: 15vmin;
 }
@@ -17,4 +17,8 @@
 .box {
     width: 15vmin;
     height: 15vmin;
+}
+
+#package-assets {
+    min-height: 25vh;
 }
