@@ -2,13 +2,13 @@
 
 
     let handCanvas = document.createElement('canvas');
-handCanvas.classList.add("row");
-handCanvas.id = "grabbing-hand-canvas";
-handCanvas.width = document.getElementById("grabbing-hand").offsetWidth;
-handCanvas.height = document.getElementById("grabbing-hand").offsetHeight;
+    handCanvas.classList.add("row");
+    handCanvas.id = "grabbing-hand-canvas";
+    handCanvas.width = document.getElementById("grabbing-hand").offsetWidth;
+    handCanvas.height = document.getElementById("grabbing-hand").offsetHeight;
     document.getElementById("grabbing-hand").appendChild(handCanvas);
 
-// Get the canvas context
+    // Get the canvas context
     const ctx = handCanvas.getContext('2d');
     // change z index of canvas
     handCanvas.style.zIndex = 10;
@@ -82,9 +82,6 @@ handCanvas.height = document.getElementById("grabbing-hand").offsetHeight;
                 break;
             }
         }
-
-        //Request the next animation frame
-        requestAnimationFrame(animate);}
 
         // Move the grabbed element along with the arm
         if (grabbedElement) {
