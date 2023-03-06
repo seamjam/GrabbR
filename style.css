@@ -7,3 +7,8 @@
     display: flex;
     flex-direction: column;
 }
+
+.bot {
+    max-width: 15vmin;
+    max-height: 15vmin;
+}
