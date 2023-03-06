@@ -7,6 +7,7 @@ const colors = {
     yellow: ["00acc1", "1e88e5", "ffd600"],
 }
 
+let botOffsets = [];
 function getOffsets() {
     let offset = Math.round(Math.random() * 7, 1);
     if (botOffsets.includes(offset)) {
