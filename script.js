@@ -11,10 +11,11 @@ function createBotUrl(colors, seed) {
     return `https://api.dicebear.com/5.x/bottts/svg?baseColor=${colors[0]},${colors[1]},${colors[2]}&seed=${seed}`
 }
 
-function createBotElement(colors, seed) {
+function createBotElement(colors, seed, offset) {
     const bot = document.createElement('img')
     bot.classList.add('bot')
     bot.src = createBotUrl(colors, seed)
+    bot.style.left = `${offset}vw`
     return bot
 }
 
@@ -27,7 +28,8 @@ function createBoxElement(colors) {
 
 for (let colorsKey in colors) {
     console.log(`Creating bots for ${colorsKey}...`);
-    document.querySelector("#bots").appendChild(createBotElement(colors[colorsKey], 1));
+    let bot = createBotElement(colors[colorsKey], 1, Math.round(Math.random() * 90));
+    document.querySelector("#bots").appendChild(bot);
 }
 
 for (let colorsKey in colors) {
