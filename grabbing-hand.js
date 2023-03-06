@@ -7,9 +7,11 @@ document.getElementById("grabbing-hand").appendChild(canvas);
 
 // Get the canvas context
 const ctx = canvas.getContext('2d');
+const maxArmLength = canvas.height - 50;
 
 // Set up the arm properties
-let armLength = 100;
+const baseArmLength = 100;
+let armLength = baseArmLength;
 const armThickness = 20;
 const anchorX = canvas.width / 2;
 const anchorY = canvas.height / 8;
@@ -20,7 +22,6 @@ let minArmAngle = 0;
 let maxArmAngle = 3;
 let armAngle = minArmAngle;
 let armDirection = 1; // 1 for moving from left to right, -1 for moving from right to left
-
 let isGrabbing = false;
 
 function animate() {
@@ -49,19 +50,28 @@ function animate() {
     // Request the next animation frame
     requestAnimationFrame(animate);
 }
-
+let extendingDirection = 1;
+let hasExtended = false;
 function grabAnimation() {
+    if(!isGrabbing) return;
     armSpeed = 0;
+    let extension = 2 * extendingDirection;
     // Increase the length of the arm to simulate grabbing after each second
-    if (armLength < 200) {
-        armLength += 1;
+    if (armLength < maxArmLength && armLength >= baseArmLength) {
+        armLength += extension;
+    }
+    if(armLength >= maxArmLength - 10 && !hasExtended) {
+        extendingDirection = -1;
+        hasExtended = true;
+    }
+    if(armLength <= baseArmLength + 10 && hasExtended) {
+        extendingDirection = 1;
+        hasExtended = false;
+        isGrabbing = false;
+        armSpeed = 0.01;
     }
     requestAnimationFrame(grabAnimation)
     // Stop the animation after 1 second
-    setTimeout(function () {
-        isGrabbing = false;
-        armSpeed = 0.01;
-    }, 1000);
 }
 
 function pickup() {
@@ -70,7 +80,6 @@ function pickup() {
     grabAnimation();
 }
 
-
-
 // Start the animation loop
 animate();
+
