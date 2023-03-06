@@ -2,6 +2,7 @@
 const colors = {
     purple: ["00acc1", "1e88e5", "5e35b1"],
     blue: ["00acc1", "1e88e5", "039be5"],
+    orange: ["00acc1", "1e88e5", "fb8c00"],
     green: ["00acc1", "1e88e5", "00c853"],
     yellow: ["00acc1", "1e88e5", "ffd600"],
 }
@@ -17,4 +18,7 @@ function createBotElement(colors, seed) {
     return bot
 }
 
-document.querySelector("body").appendChild(createBotElement(colors.purple, 1));
+for (let colorsKey in colors) {
+    console.log(`Creating bots for ${colorsKey}...`);
+    document.querySelector("#bots").appendChild(createBotElement(colors[colorsKey], 1));
+}
