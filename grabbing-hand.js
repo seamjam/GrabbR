@@ -1,5 +1,6 @@
 // Set up the canvas element
 
+
     let handCanvas = document.createElement('canvas');
 handCanvas.classList.add("row");
 handCanvas.id = "grabbing-hand-canvas";
@@ -7,7 +8,7 @@ handCanvas.width = document.getElementById("grabbing-hand").offsetWidth;
 handCanvas.height = document.getElementById("grabbing-hand").offsetHeight;
     document.getElementById("grabbing-hand").appendChild(handCanvas);
 
-    // Get the canvas context
+// Get the canvas context
     const ctx = handCanvas.getContext('2d');
     // change z index of canvas
     handCanvas.style.zIndex = 10;
@@ -20,7 +21,13 @@ handCanvas.height = document.getElementById("grabbing-hand").offsetHeight;
     const anchorX = handCanvas.offsetWidth / 2;
     const anchorY = handCanvas.height / 8;
 
-    // Set up the animation loop
+    //set up the hand properties
+    const Handwidth = 100; // adjust to desired width
+    const Handheight = 50; // adjust to desired height
+    const borderWidth = 10; // adjust to desired border width
+
+
+// Set up the animation loop
     let armSpeed = 0.01;
     let minArmAngle = 0;
     let maxArmAngle = 3;
@@ -42,6 +49,14 @@ handCanvas.height = document.getElementById("grabbing-hand").offsetHeight;
         ctx.lineWidth = armThickness;
         ctx.moveTo(anchorX, anchorY);
         ctx.lineTo(endpointX, endpointY);
+        ctx.stroke();
+
+        //Draw the hand
+        ctx.beginPath();
+        let angleOffset = armAngle - 45;
+        ctx.arc(endpointX, endpointY, 50, 0 + angleOffset, Math.PI + angleOffset, true); // draw the top half of a circle
+        ctx.lineWidth = borderWidth;
+        ctx.strokeStyle = "black";
         ctx.stroke();
 
         // Update the arm angle for the next frame
@@ -67,6 +82,9 @@ handCanvas.height = document.getElementById("grabbing-hand").offsetHeight;
                 break;
             }
         }
+
+        //Request the next animation frame
+        requestAnimationFrame(animate);}
 
         // Move the grabbed element along with the arm
         if (grabbedElement) {
@@ -113,6 +131,4 @@ handCanvas.height = document.getElementById("grabbing-hand").offsetHeight;
 
 // Start the animation loop
     animate();
-
-
 
