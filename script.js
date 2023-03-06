@@ -1,5 +1,4 @@
 goAssemblyLine();
-grabHand();
 
 
 let score = 0;

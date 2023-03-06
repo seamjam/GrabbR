@@ -1,26 +1,26 @@
 // Set up the canvas element
 
-function grabHand() {
-    let canvas = document.createElement('canvas');
-    canvas.classList.add("row");
-    canvas.width = document.getElementById("grabbing-hand").offsetWidth;
-    canvas.height = document.getElementById("grabbing-hand").offsetHeight;
-    document.getElementById("grabbing-hand").appendChild(canvas);
+
+    let handCanvas = document.createElement('canvas');
+    handCanvas.classList.add("row");
+    handCanvas.width = document.getElementById("grabbing-hand").offsetWidth;
+    handCanvas.height = document.getElementById("grabbing-hand").offsetHeight;
+    document.getElementById("grabbing-hand").appendChild(handCanvas);
 
 // Get the canvas context
-    const ctx = canvas.getContext('2d');
+    const ctx = handCanvas.getContext('2d');
 // change z index of canvas
-    canvas.style.zIndex = 10;
-    const maxArmLength = canvas.height * 3 - 50;
+    handCanvas.style.zIndex = 10;
+    const maxArmLength = handCanvas.height * 3 - 50;
 
-// Set up the arm properties
+    // Set up the arm properties
     const baseArmLength = 100;
     let armLength = baseArmLength;
     const armThickness = 20;
-    const anchorX = canvas.width / 2;
-    const anchorY = canvas.height / 8;
+    const anchorX = handCanvas.width / 2;
+    const anchorY = handCanvas.height / 8;
 
-//set up the hand properties
+    //set up the hand properties
     const Handwidth = 100; // adjust to desired width
     const Handheight = 50; // adjust to desired height
     const borderWidth = 10; // adjust to desired border width
@@ -33,10 +33,11 @@ function grabHand() {
     let armAngle = minArmAngle;
     let armDirection = 1; // 1 for moving from left to right, -1 for moving from right to left
     let isGrabbing = false;
+    let grabbedElement = null;
 
     function animate() {
         // Clear the canvas
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, handCanvas.width, handCanvas.height);
 
         // Calculate the arm's endpoint
         const endpointX = anchorX + armLength * Math.cos(armAngle);
@@ -65,9 +66,22 @@ function grabHand() {
             armAngle = Math.max(minArmAngle, Math.min(maxArmAngle, armAngle));
         }
 
-        // Request the next animation frame
-        requestAnimationFrame(animate);
-    }
+        // Check for collision with elements of a certain class
+        const elements = document.getElementsByClassName("bot");
+        for (let i = 0; i < elements.length; i++) {
+            const element = elements[i];
+            const rect = element.getBoundingClientRect();
+            if (endpointX >= rect.left && endpointX <= rect.right &&
+                endpointY >= rect.top && endpointY <= rect.bottom) {
+                console.log("Grabbed element", element);
+                grabbedElement = element;
+                break;
+            }
+        }
+
+        //Request the next animation frame
+        requestAnimationFrame(animate);}
+
 
     let extendingDirection = 1;
     let hasExtended = false;
@@ -102,5 +116,4 @@ function grabHand() {
 
 // Start the animation loop
     animate();
-}
 
