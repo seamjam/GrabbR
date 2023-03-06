@@ -53,7 +53,7 @@
 
         //Draw the hand
         ctx.beginPath();
-        let angleOffset = armAngle - 45;
+        let angleOffset = armAngle + Math.PI / 2;
         ctx.arc(endpointX, endpointY, 50, 0 + angleOffset, Math.PI + angleOffset, true); // draw the top half of a circle
         ctx.lineWidth = borderWidth;
         ctx.strokeStyle = "black";
