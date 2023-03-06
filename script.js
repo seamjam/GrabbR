@@ -18,7 +18,19 @@ function createBotElement(colors, seed) {
     return bot
 }
 
+function createBoxElement(colors) {
+    const box = document.createElement('div')
+    box.classList.add('box')
+    box.style.backgroundColor = `#${colors[2]}`
+    return box
+}
+
 for (let colorsKey in colors) {
     console.log(`Creating bots for ${colorsKey}...`);
     document.querySelector("#bots").appendChild(createBotElement(colors[colorsKey], 1));
+}
+
+for (let colorsKey in colors) {
+    console.log(`Creating boxes for ${colorsKey}...`);
+    document.querySelector("#boxes").appendChild(createBoxElement(colors[colorsKey]));
 }
