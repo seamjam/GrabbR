@@ -12,7 +12,7 @@ function addScore(){
 }
 
 for (let colorsKey in colors) {
-    let bot = createBotElement(colorsKey, colors[colorsKey], 1, Math.round(Math.random() * 90));
+    let bot = createBotElement(colorsKey, colors[colorsKey], 1);
     document.querySelector("#bots").appendChild(bot);
 }
 
