@@ -1,5 +1,7 @@
 // Set up the canvas element
-const canvas = document.createElement('canvas');
+
+function grabHand() {
+let canvas = document.createElement('canvas');
 canvas.classList.add("row");
 canvas.width = document.getElementById("grabbing-hand").offsetWidth;
 canvas.height = document.getElementById("grabbing-hand").offsetHeight;
@@ -84,4 +86,6 @@ function pickup() {
 
 // Start the animation loop
 animate();
+
+}
 

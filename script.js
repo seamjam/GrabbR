@@ -1,3 +1,7 @@
+goAssemblyLine();
+grabHand();
+
+
 let score = 0;
 let scoreText = document.createElement("p", );
 scoreText.innerText=('Score: '+score);
