@@ -12,6 +12,7 @@
     position: absolute;
     width: 15vmin;
     height: 15vmin;
+    pointer-events: none;
 }
 
 .box {
