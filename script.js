@@ -38,12 +38,10 @@ function createBoxElement(colors) {
 }
 
 for (let colorsKey in colors) {
-    console.log(`Creating bots for ${colorsKey}...`);
     let bot = createBotElement(colors[colorsKey], 1, Math.round(Math.random() * 90));
     document.querySelector("#bots").appendChild(bot);
 }
 
 for (let colorsKey in colors) {
-    console.log(`Creating boxes for ${colorsKey}...`);
     document.querySelector("#boxes").appendChild(createBoxElement(colors[colorsKey]));
 }
