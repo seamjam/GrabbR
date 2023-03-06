@@ -18,6 +18,15 @@ function getOffsets() {
     }
 }
 
+let score = 0;
+let scoreText = document.createElement("p", );
+scoreText.innerText=('Score: '+score);
+document.querySelector('#score').appendChild(scoreText);
+function addScore(){
+    score++;
+    scoreText.innerText=('Score: '+score);
+}
+
 function createBotUrl(colors, seed) {
     return `https://api.dicebear.com/5.x/bottts/svg?baseColor=${colors[0]},${colors[1]},${colors[2]}&seed=${seed}`
 }
@@ -34,6 +43,7 @@ function createBoxElement(colors) {
     const box = document.createElement('div')
     box.classList.add('box')
     box.style.backgroundColor = `#${colors[2]}`
+    box.addEventListener("mouseenter", addScore);
     return box
 }
 
