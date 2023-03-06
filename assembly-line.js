@@ -1,17 +1,11 @@
 function goAssemblyLine()
 {
-    // HTML canvas element selecteren
-// HTML canvas element maken
+
     let canvas = document.createElement('canvas');
-
-// Canvas klasse toevoegen en breedte/hoogte instellen
-//     canvas.classList.add('row');
-    canvas.width = document.getElementById('esembly-line').offsetWidth;
-    canvas.height = document.getElementById('esembly-line').offsetHeight;
-
-// Canvas toevoegen aan de lopende band div
+    canvas.classList.add("row");
+    canvas.width = document.getElementById("grabbing-hand").offsetWidth;
+    canvas.height = document.getElementById("grabbing-hand").offsetHeight;
     document.getElementById('esembly-line').appendChild(canvas);
-
 
 // const canvas = document.querySelector('canvas');
     const ctx = canvas.getContext('2d');
@@ -20,7 +14,7 @@ function goAssemblyLine()
     const colors = ['#000000'];
 
 // De hoogte van de lopende band
-    const bandHeight = 1000 * 4;
+    const bandHeight = 300;
 
 // De hoogte en breedte van de doos
     const boxWidth = 200;
